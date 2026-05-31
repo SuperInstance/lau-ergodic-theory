@@ -2,7 +2,7 @@
 
 use crate::measure::Measure;
 use nalgebra::DMatrix;
-use serde::{Deserialize, Serialize};
+
 
 /// The Perron-Frobenius operator P acting on densities.
 /// For a map T: ∫_A Pf dμ = ∫_{T⁻¹(A)} f dμ
@@ -51,7 +51,7 @@ impl PerronFrobeniusOperator {
     /// Apply the PF operator to a density (measure).
     /// Returns the density after one step.
     pub fn apply(pf: &DMatrix<f64>, density: &Measure) -> Measure {
-        let n = density.weights.len();
+        let _n = density.weights.len();
         let d = nalgebra::DVector::from_vec(density.weights.clone());
         let result = pf * d;
         Measure {

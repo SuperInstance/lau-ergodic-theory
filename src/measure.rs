@@ -1,7 +1,6 @@
 //! Measure-preserving transformations and measure spaces.
 
 use serde::{Deserialize, Serialize};
-use std::collections::BTreeMap;
 
 /// A probability measure over a finite set of states.
 /// Represented as a mapping from set index to measure value.

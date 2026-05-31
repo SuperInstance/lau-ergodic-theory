@@ -4,9 +4,9 @@
 use crate::ergodicity::ErgodicChecker;
 use crate::lyapunov::LyapunovExponent;
 use crate::markov::MarkovChain;
+#[allow(unused_imports)]
 use crate::measure::{Measure, MeasureSpace, Transformation};
 use crate::birkhoff::BirkhoffAverage;
-use crate::perron_frobenius::PerronFrobeniusOperator;
 use serde::{Deserialize, Serialize};
 
 /// Summary of an agent's long-term behavior.

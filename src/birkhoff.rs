@@ -179,7 +179,7 @@ mod tests {
         // Uniform measure with 3-cycle
         let m = Measure::uniform(3);
         let t = Transformation::new(vec![1, 2, 0]);
-        let ms = MeasureSpace::new(m.clone(), t.clone());
+        let _ms = MeasureSpace::new(m.clone(), t.clone());
         let f = vec![10.0, 20.0, 30.0];
         let space_avg = BirkhoffAverage::space_average(&m, &f);
         let time_avg = BirkhoffAverage::time_average(&t, &f, 0, 6000);

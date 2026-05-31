@@ -1,6 +1,7 @@
 //! Ergodicity checking: a measure-preserving system is ergodic if
 //! every invariant set has measure 0 or 1.
 
+#[allow(unused_imports)]
 use crate::measure::{Measure, MeasureSpace, Transformation};
 
 /// Checks ergodicity of measure-preserving systems.

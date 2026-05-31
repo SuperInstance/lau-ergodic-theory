@@ -1,6 +1,7 @@
 //! Shannon-McMillan-Breiman theorem: the entropy of a partition along an orbit
 //! converges to the conditional entropy of the partition given the past.
 
+#[allow(unused_imports)]
 use crate::measure::{Measure, MeasureSpace, Transformation};
 use crate::entropy::Partition;
 
@@ -10,6 +11,7 @@ pub struct ShannonMcMillanBreiman;
 impl ShannonMcMillanBreiman {
     /// Compute the information function: -ln(μ(cell containing x in refined partition)) / n.
     /// This converges to h(T, α) for ergodic systems.
+    #[allow(clippy::needless_range_loop)]
     pub fn information_rate(
         ms: &MeasureSpace,
         partition: &Partition,

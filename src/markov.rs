@@ -47,6 +47,7 @@ impl MarkovChain {
     }
 
     /// Compute stationary distribution by solving πP = π.
+    #[allow(clippy::needless_range_loop)]
     pub fn compute_stationary(&mut self) -> &Measure {
         let n = self.n_states;
         
@@ -85,6 +86,7 @@ impl MarkovChain {
     }
 
     /// Check if the chain is irreducible (every state reachable from every other).
+    #[allow(clippy::needless_range_loop)]
     pub fn is_irreducible(&self) -> bool {
         let n = self.n_states;
         // Use matrix powers to check reachability
@@ -115,7 +117,7 @@ impl MarkovChain {
         // Check aperiodicity: for irreducible chains, aperiodic iff at least one diagonal entry > 0
         // More precisely, check the period of the chain
         let n = self.n_states;
-        let mut period = 0usize;
+        let mut _period = 0usize;
         let mut current = 0usize;
         
         // Find period of state 0
@@ -135,7 +137,7 @@ impl MarkovChain {
             step += 1;
             
             if current == 0 {
-                period = step;
+                _period = step;
                 break;
             }
             if step > n * n {
@@ -159,7 +161,7 @@ impl MarkovChain {
             for j in 0..n {
                 if self.transition_matrix[state][j] > 0.0 {
                     let key = (j, dist + 1);
-                    if !visited.contains(&key) && dist + 1 <= n * 2 {
+                    if !visited.contains(&key) && dist < n * 2 {
                         visited.insert(key);
                         queue.push((j, dist + 1));
                     }

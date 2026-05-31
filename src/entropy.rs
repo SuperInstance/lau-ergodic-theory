@@ -2,7 +2,6 @@
 
 use crate::measure::{Measure, MeasureSpace};
 use serde::{Deserialize, Serialize};
-use std::collections::BTreeMap;
 
 /// A partition of the state space into disjoint subsets.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -158,6 +157,7 @@ impl KolmogorovSinaiEntropy {
     }
 
     /// Compute entropy rate for a Markov chain given its transition matrix and stationary measure.
+    #[allow(clippy::needless_range_loop)]
     pub fn markov_entropy_rate(transition_matrix: &[Vec<f64>], stationary: &Measure) -> f64 {
         let n = stationary.weights.len();
         let mut h = 0.0;

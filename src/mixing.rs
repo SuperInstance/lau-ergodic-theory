@@ -3,6 +3,7 @@
 //! Weak mixing: (1/N) Σ|μ(T⁻ⁿ(A) ∩ B) - μ(A)μ(B)| → 0
 //! Strong mixing: μ(T⁻ⁿ(A) ∩ B) → μ(A)μ(B) as n → ∞
 
+#[allow(unused_imports)]
 use crate::measure::{Measure, MeasureSpace, Transformation};
 
 /// Checks weak and strong mixing properties.

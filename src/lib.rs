@@ -1,3 +1,4 @@
+#![deny(unsafe_code)]
 //! # lau-ergodic-theory
 //!
 //! Ergodic theory library implementing the mathematics of long-term statistical

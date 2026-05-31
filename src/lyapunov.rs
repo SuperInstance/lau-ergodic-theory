@@ -1,7 +1,7 @@
 //! Lyapunov exponents: measure the exponential rate of separation of
 //! infinitesimally close trajectories.
 
-use serde::{Deserialize, Serialize};
+
 
 /// Lyapunov exponent computation for dynamical systems.
 pub struct LyapunovExponent;
@@ -40,7 +40,7 @@ impl LyapunovExponent {
     /// Compute the Lyapunov exponent for the baker's map.
     /// (x, y) → (2x mod 1, (y + floor(2x)) / 2)
     /// Lyapunov exponent in x-direction: λ_x = ln(2).
-    pub fn bakers_map(n_steps: usize) -> f64 {
+    pub fn bakers_map(_n_steps: usize) -> f64 {
         // The baker's map has λ = ln(2) in the expanding direction
         (2.0_f64).ln()
     }
